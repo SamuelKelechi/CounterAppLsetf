@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
+import "./App.css"
+
 
 function App() {
+  const [add, setAdd]= useState(0)
+
+  function Plus(){
+    setAdd(add +1)
+  }
+
+  const Minus = () => {
+    setAdd(add -1)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Main_Container">
+      <div className="Holder">
+        <button onClick={Minus}>-</button>
+        <h2>{add}</h2>
+        <button onClick={Plus}>+</button>
+      </div>
     </div>
   );
 }
-
 export default App;
